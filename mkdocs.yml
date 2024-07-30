@@ -1,0 +1,19 @@
+site_name: nixos-facter
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - search.suggest
+  palette:
+    primary: white
+    accent: deep_orange
+
+nav:
+  - Explanation:
+    - Placeholder: ""
+  - Tutorial:
+    - Placeholder: ""
+  - How-to:
+    - Placeholder: ""
+  - Reference:
+    - Placeholder: ""
