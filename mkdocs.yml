@@ -10,10 +10,10 @@ theme:
 
 nav:
   - Explanation:
-    - Placeholder: ""
+      - Placeholder: ""
   - Tutorial:
-    - Placeholder: ""
+      - Placeholder: ""
   - How-to:
-    - Placeholder: ""
+      - Placeholder: ""
   - Reference:
-    - Placeholder: ""
+      - Placeholder: ""
