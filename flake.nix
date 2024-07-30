@@ -13,17 +13,21 @@
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        name = "nixos-facter-docs";
-        src = ./.;
         pkgs = nixpkgs.legacyPackages.${system};
+        packages = with pkgs; [
+            mkdocs
+            python3Packages.mkdocs-material
+        ];
       in
         {
+          devShells.default = pkgs.mkShellNoCC {
+            inherit packages;
+          };
+
           packages.default = pkgs.stdenv.mkDerivation {
-            inherit name src;
-            nativeBuildInputs = with pkgs;[
-              mkdocs
-              python3Packages.mkdocs-material
-            ];
+            src = ./.;
+            name = "nixos-facter-docs";
+            nativeBuildInputs = packages;
             buildPhase = "mkdocs build -d $out";
           };
         }
