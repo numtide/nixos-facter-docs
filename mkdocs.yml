@@ -17,3 +17,7 @@ nav:
       - Placeholder: ""
   - Reference:
       - Placeholder: ""
+
+plugins:
+  - search
+  - mermaid2
