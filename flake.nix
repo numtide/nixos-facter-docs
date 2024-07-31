@@ -4,32 +4,20 @@
   # $ nix flake update --recreate-lock-file
 
   inputs = {
+    blueprint = {
+      url = "github:numtide/blueprint";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    systems.url = "github:nix-systems/default";
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #mkdocs-numtide.url = "github:numtide/mkdocs-numtide";
     #mkdocs-numtide.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        packages = with pkgs; [
-            mkdocs
-            python3Packages.mkdocs-material
-        ];
-      in
-        {
-          devShells.default = pkgs.mkShellNoCC {
-            inherit packages;
-          };
-
-          packages.default = pkgs.stdenv.mkDerivation {
-            src = ./.;
-            name = "nixos-facter-docs";
-            nativeBuildInputs = packages;
-            buildPhase = "mkdocs build -d $out";
-          };
-        }
-    );
+  outputs = inputs: inputs.blueprint { inherit inputs; };
 }

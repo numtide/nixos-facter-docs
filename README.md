@@ -7,10 +7,10 @@ This repository contains documentation for [nixos-facter][facter-repo] and [nixo
 This repository uses [Diátaxis][diataxis] as a framework to organize documentation.
 Individual documents are split by content type in `./docs`:
 
--   Explanation
--   Tutorial
--   How-to
--   Reference
+- Explanation
+- Tutorial
+- How-to
+- Reference
 
 ## Building the documentation
 
@@ -20,7 +20,7 @@ Individual documents are split by content type in `./docs`:
 
 1.  Clone this repository.
 2.  Change directory to the repository.
-2.  Run `nix build`.
+3.  Run `nix build`.
 
 The built documentation site is located in `./result`.
 
