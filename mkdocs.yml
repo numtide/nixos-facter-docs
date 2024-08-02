@@ -20,4 +20,6 @@ nav:
 
 plugins:
   - search
-  - mermaid2
+  - mermaid2:
+      # resolve js dependency locally rather than at runtime
+      javascript: ./js/mermaid/mermaid.esm.min.mjs
