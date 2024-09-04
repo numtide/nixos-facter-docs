@@ -18,6 +18,7 @@ pkgs.stdenv.mkDerivation {
     root = ../.;
     fileset = fs.unions [
       ../docs
+      ../overrides
       ../mkdocs.yml
     ];
   };
