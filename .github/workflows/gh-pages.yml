@@ -42,4 +42,4 @@ jobs:
           MAJOR_MINOR=${REF_NAME%.*}
           # strip the leading v from the ref_name
           # update the latest alias          
-          nix develop --command bash -c "mike deploy -p -u ${MAJOR_MINOR:1} latest"      
+          nix develop --command bash -c "mike deploy -p -u ${MAJOR_MINOR} latest"      
