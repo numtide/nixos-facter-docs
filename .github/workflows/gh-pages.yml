@@ -12,7 +12,7 @@ on:
 
 jobs:
 
-  deploy-main:
+  deploy:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
@@ -40,4 +40,4 @@ jobs:
         run: |
           # strip the leading v from the ref_name
           # update the latest alias
-          nix develop --command bash -c "mike deploy -p -u ${${{ github.ref_name }}:1} latest"      
+          nix develop --command bash -c "mike deploy -p -u ${"${{ github.ref_name }}":1} latest"      
