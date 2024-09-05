@@ -1,4 +1,4 @@
-name: Deploy content to Pages
+name: Deploy docs
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  deploy-latest-docs:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
@@ -22,15 +22,10 @@ jobs:
           extra_nix_config: |
             accept-flake-config = true
             experimental-features = nix-command flakes
-
-      - name: Build
-        id: build
+      - name: Configure Git user
         run: |
-          nix build .#docs
-          echo "result=$(readlink ./result)" >> $GITHUB_OUTPUT
-
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: "${{ steps.build.outputs.result }}/"
+        run: |
+          nix develop --command bash -c "mike deploy --push 0.1.0 latest"
