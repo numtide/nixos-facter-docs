@@ -3,11 +3,11 @@
 To generate a report, you will need to have [Nix] installed on the target machine.
 
 ```shell
-NIX_CONFIG="experimental-features = nix-command flakes" \
-    sudo -E NIX_CONFIG nix run \
-    --option extra-substituters https://numtide.cachix.org \
-    --option extra-trusted-public-keys numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE= \
-    github:numtide/nixos-facter -- -o facter.json
+sudo nix run \
+  --option experimental-features "nix-command flakes" \
+  --option extra-substituters https://numtide.cachix.org \
+  --option extra-trusted-public-keys numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE= \
+  github:numtide/nixos-facter -- -o facter.json
 ```
 
 !!! note
