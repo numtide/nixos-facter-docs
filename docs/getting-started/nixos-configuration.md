@@ -79,7 +79,7 @@ The NixOS Facter module will attempt to do the following:
 
 !!! info "Roadmap"
 
-    We continue to add and improve [nixos-facter-modules]. Our eventual goal is to replace much if not all of the
+    We continue to add to and improve [nixos-facter-modules]. Our eventual goal is to replace much if not all of the
     functionality currently provided by [nixos-hardware] and [nixos-generate-config].
 
 [NixOS configuration]: https://nixos.org/manual/nixos/stable/#sec-configuration-syntax
