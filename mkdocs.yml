@@ -60,6 +60,8 @@ theme:
         name: Switch to system preference
 
 extra:
+  version:
+    provider: mike
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/numtide
@@ -101,3 +103,4 @@ plugins:
   - mermaid2:
       # resolve js dependency locally rather than at runtime
       javascript: ./js/mermaid/mermaid.esm.min.mjs
+  - mike

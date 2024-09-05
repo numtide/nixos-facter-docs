@@ -7,9 +7,14 @@ pkgs.mkShellNoCC {
     ln -sf ${perSystem.self.mermaid} docs/js/mermaid
   '';
 
-  packages = with pkgs; [
-    mkdocs
-    python3Packages.mkdocs-material
-    python3Packages.mkdocs-mermaid2-plugin
-  ];
+  packages =
+    with pkgs;
+    [
+      mkdocs
+    ]
+    ++ (with pkgs.python3Packages; [
+      mike
+      mkdocs-material
+      mkdocs-mermaid2-plugin
+    ]);
 }
