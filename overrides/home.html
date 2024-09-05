@@ -1,0 +1,101 @@
+{% extends "main.html" %} {% block header %}
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+    <!-- Link to home -->
+    <a
+      href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
+      title="{{ config.site_name | e }}"
+      class="md-header__button md-logo"
+      aria-label="{{ config.site_name }}"
+      data-md-component="logo"
+    >
+      {% include "partials/logo.html" %}
+    </a>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis"> {{ config.site_name }} </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            {% if page.meta and page.meta.title %} {{ page.meta.title }} {% else
+            %} {{ page.title }} {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color palette toggle -->
+    {% if config.theme.palette %} {% if not config.theme.palette is mapping %}
+    {% include "partials/palette.html" %} {% endif %} {% endif %}
+
+    <!-- User preference: color palette -->
+    {% if not config.theme.palette is mapping %} {% include
+    "partials/javascripts/palette.html" %} {% endif %}
+
+    <!-- Site language selector -->
+    {% if config.extra.alternate %} {% include "partials/alternate.html" %} {%
+    endif %}
+
+    <!-- Repository information -->
+    {% if config.repo_url %}
+    <div class="md-header__source">{% include "partials/source.html" %}</div>
+    {% endif %}
+  </nav>
+</header>
+{% endblock %} {% block hero %}
+
+<style>
+  .md-header {
+    position: initial;
+  }
+  /*.md-main__inner{margin:0}*/
+  .md-content {
+    display: none;
+  }
+  .mdx-hero__image {
+    padding: 4rem 0 0 0;
+  }
+  .mdx-hero__content {
+    /*padding-bottom: 0;*/
+    /*position: relative;*/
+    /*top: -10rem;*/
+  }
+</style>
+<section class="mdx-container">
+  <div class="md-grid md-typeset">
+    <div class="mdx-hero">
+      <div class="mdx-hero__image">
+        <img
+          src="assets/images/illustration.png"
+          alt=""
+          width="1659"
+          height="1200"
+          draggable="false"
+        />
+      </div>
+      <div class="md-content__inner">
+        <h1>NixOS Facter</h1>
+        <p>{{ config.site_description }}</p>
+        <a
+          href="{{ page.next_page.url | url }}"
+          title="{{ page.next_page.title | e }}"
+          class="md-button md-button--primary"
+        >
+          Get started
+        </a>
+        <a
+          href="{{ 'about' | url }}"
+          title="Project background"
+          class="md-button"
+        >
+          More info
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %} {% block tabs %}{% endblock %} {% block site_nav %}{% endblock %}
+{% block content %}{% endblock %} {% block footer %}{% endblock %}
