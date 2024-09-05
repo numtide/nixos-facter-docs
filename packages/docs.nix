@@ -25,6 +25,7 @@ pkgs.stdenv.mkDerivation {
 
   nativeBuildInputs = with pkgs; [
     mkdocs
+    python3Packages.mike
     python3Packages.mkdocs-material
     python3Packages.mkdocs-mermaid2-plugin
   ];
