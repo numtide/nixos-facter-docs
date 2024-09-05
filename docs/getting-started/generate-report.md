@@ -17,6 +17,8 @@ sudo nix run \
 
 This will scan your system and produce a JSON-based report in a file named `facter.json`:
 
+This is a test change.
+
 ```json title="facter.json"
 {
   "version": 2, // (1)!
