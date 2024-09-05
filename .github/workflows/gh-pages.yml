@@ -38,6 +38,7 @@ jobs:
       - name: Deploy version
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
+          REF_NAME=${{ github.ref_name }}
           # strip the leading v from the ref_name
-          # update the latest alias
-          nix develop --command bash -c "mike deploy -p -u "${${{ github.ref_name }}:1}" latest"      
+          # update the latest alias          
+          nix develop --command bash -c "mike deploy -p -u ${REF_NAME:1} latest"      
