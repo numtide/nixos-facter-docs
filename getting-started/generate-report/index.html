@@ -487,11 +487,11 @@
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">NIX_CONFIG</span><span class="o">=</span><span class="s2">&quot;experimental-features = nix-command flakes&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span>sudo<span class="w"> </span>-E<span class="w"> </span>NIX_CONFIG<span class="w"> </span>nix<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span>--option<span class="w"> </span>extra-substituters<span class="w"> </span>https://numtide.cachix.org<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span>--option<span class="w"> </span>extra-trusted-public-keys<span class="w"> </span>numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE<span class="o">=</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span>github:numtide/nixos-facter<span class="w"> </span>--<span class="w"> </span>-o<span class="w"> </span>facter.json
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>nix<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span>--option<span class="w"> </span>experimental-features<span class="w"> </span><span class="s2">&quot;nix-command flakes&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span>--option<span class="w"> </span>extra-substituters<span class="w"> </span>https://numtide.cachix.org<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span>--option<span class="w"> </span>extra-trusted-public-keys<span class="w"> </span>numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE<span class="o">=</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span>github:numtide/nixos-facter<span class="w"> </span>--<span class="w"> </span>-o<span class="w"> </span>facter.json
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
