@@ -17,7 +17,7 @@
         <link rel="next" href="getting-started/generate-report/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.33">
     
     
@@ -101,8 +101,7 @@
       data-md-component="logo"
     >
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="assets/images/logo.png" alt="logo">
 
     </a>
 
@@ -184,32 +183,43 @@
   .md-header {
     position: initial;
   }
-  /*.md-main__inner{margin:0}*/
-  .md-content {
-    display: none;
+  .mdx-hero {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 500px;
+    height: calc(100vh - 2.4rem);
   }
-  .mdx-hero__image {
-    padding: 4rem 0 0 0;
+
+  .magnifying-glass {
+    fill: #f58634;
+    stroke: #f58634;
   }
   .mdx-hero__content {
-    /*padding-bottom: 0;*/
-    /*position: relative;*/
-    /*top: -10rem;*/
+    min-width: 20rem;
+  }
+
+  .md-main {
+    display: none;
+  }
+
+  @media screen and (max-width: 60em) {
+    .mdx-hero {
+      flex-direction: column-reverse;
+    }
+    .mdx-hero__image {
+      margin-top: 4rem;
+    }
+    .mdx-hero__content {
+      min-width: unset;
+    }
   }
 </style>
 <section class="mdx-container">
   <div class="md-grid md-typeset">
     <div class="mdx-hero">
-      <div class="mdx-hero__image">
-        <img
-          src="assets/images/illustration.png"
-          alt=""
-          width="1659"
-          height="1200"
-          draggable="false"
-        />
-      </div>
-      <div class="md-content__inner">
+      <div class="mdx-hero__content md-content__inner">
         <h1>NixOS Facter</h1>
         <p>Declarative hardware configuration for NixOS</p>
         <a
@@ -226,6 +236,10 @@
         >
           More info
         </a>
+      </div>
+
+      <div class="mdx-hero__image md-content__inner">
+        <img src="assets/images/hero.svg" alt="" draggable="false" />
       </div>
     </div>
   </div>
