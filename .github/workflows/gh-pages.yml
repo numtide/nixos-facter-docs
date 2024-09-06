@@ -5,13 +5,12 @@ on:
     branches:
       - main
     tags:
-      - 'v*'
+      - "v*"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-
   deploy:
     runs-on: ubuntu-22.04
     permissions:
@@ -42,4 +41,4 @@ jobs:
           MAJOR_MINOR=${REF_NAME%.*}
           # strip the leading v from the ref_name
           # update the latest alias          
-          nix develop --command bash -c "mike deploy -p -u ${MAJOR_MINOR} latest"      
+          nix develop --command bash -c "mike deploy -p -u ${MAJOR_MINOR} latest"

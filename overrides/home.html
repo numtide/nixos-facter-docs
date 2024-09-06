@@ -51,32 +51,43 @@
   .md-header {
     position: initial;
   }
-  /*.md-main__inner{margin:0}*/
-  .md-content {
-    display: none;
+  .mdx-hero {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 500px;
+    height: calc(100vh - 2.4rem);
   }
-  .mdx-hero__image {
-    padding: 4rem 0 0 0;
+
+  .magnifying-glass {
+    fill: #f58634;
+    stroke: #f58634;
   }
   .mdx-hero__content {
-    /*padding-bottom: 0;*/
-    /*position: relative;*/
-    /*top: -10rem;*/
+    min-width: 20rem;
+  }
+
+  .md-main {
+    display: none;
+  }
+
+  @media screen and (max-width: 60em) {
+    .mdx-hero {
+      flex-direction: column-reverse;
+    }
+    .mdx-hero__image {
+      margin-top: 4rem;
+    }
+    .mdx-hero__content {
+      min-width: unset;
+    }
   }
 </style>
 <section class="mdx-container">
   <div class="md-grid md-typeset">
     <div class="mdx-hero">
-      <div class="mdx-hero__image">
-        <img
-          src="assets/images/illustration.png"
-          alt=""
-          width="1659"
-          height="1200"
-          draggable="false"
-        />
-      </div>
-      <div class="md-content__inner">
+      <div class="mdx-hero__content md-content__inner">
         <h1>NixOS Facter</h1>
         <p>{{ config.site_description }}</p>
         <a
@@ -93,6 +104,10 @@
         >
           More info
         </a>
+      </div>
+
+      <div class="mdx-hero__image md-content__inner">
+        <img src="assets/images/hero.svg" alt="" draggable="false" />
       </div>
     </div>
   </div>
